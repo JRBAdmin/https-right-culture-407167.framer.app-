@@ -1,0 +1,222 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║                        🚀 AURA OS QUICK REFERENCE 🚀                         ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ 📋 WHAT YOU NEED                                                             │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ✓ Python 3.10+        → https://www.python.org/downloads/                 │
+│  ✓ Node.js 18+ (LTS)   → https://nodejs.org/                               │
+│  ✓ Git (optional)      → https://git-scm.com/                              │
+│                                                                              │
+│  📌 When installing Python & Node.js:                                       │
+│     • Add to PATH ✓                                                          │
+│     • Restart terminal after install                                        │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ ⚡ QUICK LAUNCH (Choose One)                                                 │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Option 1️⃣  - EASIEST (Windows):                                           │
+│    1. Go to: C:\Users\meagh\aura-os                                         │
+│    2. Double-click: launch-dev.bat                                          │
+│    3. Wait 30 seconds                                                        │
+│    4. Opens http://localhost:9000 automatically                             │
+│                                                                              │
+│  Option 2️⃣  - PowerShell:                                                  │
+│    $ cd C:\Users\meagh\aura-os                                              │
+│    $ .\launch-dev.ps1                                                       │
+│                                                                              │
+│  Option 3️⃣  - Manual (Full Control):                                       │
+│                                                                              │
+│    Terminal 1:                                                              │
+│    $ cd C:\Users\meagh\aura-os\backend                                      │
+│    $ python -m venv venv                                                    │
+│    $ .\venv\Scripts\activate                                                │
+│    $ pip install -r requirements.txt                                        │
+│    $ python core_server.py                                                  │
+│                                                                              │
+│    Terminal 2:                                                              │
+│    $ cd C:\Users\meagh\aura-os\frontend                                     │
+│    $ npm install                                                            │
+│    $ npm run dev                                                            │
+│                                                                              │
+│  🌐 Then open browser: http://localhost:9000                                │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ 🔌 PORTS & URLS                                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Backend (Python):        http://localhost:9500                             │
+│  Frontend (React):        http://localhost:9000                             │
+│                                                                              │
+│  Health Check:            http://localhost:9500/health                      │
+│  System Metrics API:      http://localhost:9500/api/system/metrics          │
+│  System Info API:         http://localhost:9500/api/system/info             │
+│  Network Status API:      http://localhost:9500/api/network/status          │
+│                                                                              │
+│  Why not 3000/5000/8080? They might conflict with your system.              │
+│  9000/9500 are custom ports to avoid conflicts! 👍                          │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ 📁 FILE STRUCTURE                                                            │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  aura-os/                                                                   │
+│  ├── 📄 START_HERE.md ..................... Read this first! ⭐            │
+│  ├── 📄 DEV_QUICKSTART.md ................ Detailed dev guide               │
+│  │                                                                          │
+│  ├── 📂 frontend/ ........................ React + Electron app             │
+│  │   ├── src/components/ ................ UI components                    │
+│  │   │   ├── LoadingScreen.js/css ....... Boot animation                   │
+│  │   │   ├── Dashboard.js/css ........... Main dashboard                   │
+│  │   │   ├── SystemStatus.js/css ........ Status widgets                   │
+│  │   │   ├── QuickLaunch.js/css ......... App launcher                     │
+│  │   │   └── Widgets.js/css ............ System metrics                    │
+│  │   ├── public/ ........................ Static files                      │
+│  │   ├── package.json .................. Dependencies                      │
+│  │   └── main.js ....................... Electron config                   │
+│  │                                                                          │
+│  ├── 📂 backend/ ........................ Python FastAPI server             │
+│  │   ├── core_server.py ................ Main backend logic                │
+│  │   ├── config.py ..................... Configuration                     │
+│  │   ├── requirements.txt .............. Python dependencies               │
+│  │   └── README.md ..................... Backend docs                      │
+│  │                                                                          │
+│  ├── 📂 system/ ......................... Linux deployment files             │
+│  │   ├── setup.sh ...................... Installation script                │
+│  │   ├── aura-core.service ............ Systemd service                    │
+│  │   └── aura-frontend.service ........ Systemd service                    │
+│  │                                                                          │
+│  ├── 🚀 launch-dev.bat ................. Windows batch launcher             │
+│  ├── 🚀 launch-dev.ps1 ................. PowerShell launcher               │
+│  ├── 🔍 check-env.py ................... Dependency checker                │
+│  │                                                                          │
+│  ├── 📄 README.md ...................... Project overview                  │
+│  ├── 📄 DEPLOYMENT.md .................. Full deployment guide              │
+│  └── 📄 .gitignore ..................... Git ignore rules                   │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ ❌ TROUBLESHOOTING                                                            │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  "Python not found"                                                         │
+│    → Reinstall Python with "Add to PATH" checked                            │
+│    → Or: $env:Path += ";C:\Python310"  (adjust version)                     │
+│                                                                              │
+│  "Port already in use"                                                      │
+│    → Get-NetTCPConnection -LocalPort 9500                                   │
+│    → Stop-Process -Id PID -Force                                            │
+│                                                                              │
+│  "npm not found"                                                            │
+│    → Reinstall Node.js                                                      │
+│    → Restart terminal and computer                                          │
+│                                                                              │
+│  "Backend connection error"                                                 │
+│    → Make sure backend is running first                                     │
+│    → Check: http://localhost:9500/health                                    │
+│    → Wait 3-5 seconds after starting                                        │
+│                                                                              │
+│  "Blank frontend page"                                                      │
+│    → Press F12 and check browser console                                    │
+│    → Check backend logs in terminal                                         │
+│    → Clear browser cache: Ctrl+Shift+Delete                                 │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ 🎯 WHAT YOU'LL SEE                                                           │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  1. Loading Screen (3-5 seconds)                                            │
+│     ✨ Animated Aura logo                                                   │
+│     📊 Boot sequence animation                                              │
+│     🔗 "Connecting..." indicator                                            │
+│                                                                              │
+│  2. Professional Dashboard                                                  │
+│     🎨 Sleek dark theme                                                     │
+│     📱 Real-time system metrics (CPU, RAM, Storage, Temp)                   │
+│     🎪 Quick access app launcher                                            │
+│     ⏰ Live clock and date                                                  │
+│     🌐 Network status indicator                                             │
+│                                                                              │
+│  3. Live Updates                                                            │
+│     📈 Metrics update every 2 seconds                                       │
+│     🔄 WebSocket real-time connection                                       │
+│     🎯 Professional animations                                              │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ 🎨 CUSTOMIZATION                                                             │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Change Colors:                                                             │
+│    Edit: frontend/src/components/Dashboard.css                              │
+│    Look for: --accent-color: #00d4ff;                                       │
+│    Change to any hex color! 🎨                                              │
+│                                                                              │
+│  Change Theme:                                                              │
+│    Edit any .css file in frontend/src/components/                           │
+│    Colors: Cyan (#00d4ff), Green (#00ff88), Gold (#ffd60a)                 │
+│                                                                              │
+│  Add Features:                                                              │
+│    Frontend: Add .js/.css files to frontend/src/components/                 │
+│    Backend: Add endpoints to backend/core_server.py                         │
+│                                                                              │
+│  Update Brand:                                                              │
+│    Edit: frontend/src/App.js                                                │
+│    Look for: dashboard-title, change text                                   │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ 📚 DOCUMENTATION                                                             │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  📖 START_HERE.md ........... 👈 READ THIS FIRST (most helpful)            │
+│  📖 DEV_QUICKSTART.md ....... Development setup and tips                   │
+│  📖 DEPLOYMENT.md .......... Full Linux deployment guide                   │
+│  📖 backend/README.md ....... Backend API documentation                    │
+│  📖 frontend/README.md ...... Frontend development guide                   │
+│  📖 README.md .............. Project overview                              │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ ✅ NEXT STEPS                                                                │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  1. ✓ Install Python 3.10+ and Node.js 18+                                  │
+│  2. ✓ Run: launch-dev.bat (or .\launch-dev.ps1)                             │
+│  3. ✓ Open: http://localhost:9000 in browser                                │
+│  4. ✓ See the professional dashboard in action! 🎉                          │
+│                                                                              │
+│  Then:                                                                      │
+│  5. Explore the code in frontend/src/components/                            │
+│  6. Check the API in backend/core_server.py                                 │
+│  7. Customize colors and features                                           │
+│  8. Have fun building! 🚀                                                   │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    🎉 READY TO LAUNCH AURA OS! 🎉                           ║
+║                                                                              ║
+║                   Double-click: launch-dev.bat                              ║
+║                   Or: .\launch-dev.ps1                                      ║
+║                   Then: http://localhost:9000                               ║
+║                                                                              ║
+║                        Let's build something awesome!                       ║
+╚══════════════════════════════════════════════════════════════════════════════╝

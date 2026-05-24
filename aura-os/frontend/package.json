@@ -1,0 +1,66 @@
+{
+  "name": "aura-os-frontend",
+  "version": "1.0.0",
+  "description": "Aura OS - Professional Fullscreen Dashboard",
+  "private": true,
+  "type": "module",
+  "main": "main.js",
+  "homepage": "./",
+  "scripts": {
+    "dev": "PORT=9000 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "electron-dev": "concurrently \"PORT=9000 npm run dev\" \"wait-on http://localhost:9000 && electron .\"",
+    "electron-build": "npm run build && electron-builder"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "axios": "^1.6.0",
+    "socket.io-client": "^4.5.4",
+    "lucide-react": "^0.263.1"
+  },
+  "devDependencies": {
+    "react-scripts": "5.0.1",
+    "concurrently": "^8.0.1",
+    "wait-on": "^7.0.1",
+    "electron": "^24.0.0",
+    "electron-builder": "^24.0.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "build": {
+    "appId": "com.auraos.dashboard",
+    "productName": "Aura OS",
+    "files": [
+      "build/**/*",
+      "main.js"
+    ],
+    "directories": {
+      "buildResources": "public"
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "category": "Utility"
+    }
+  }
+}

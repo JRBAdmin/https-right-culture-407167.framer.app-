@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0533"/>
+      <stop offset="100%" style="stop-color:#0a0a1a"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7"/>
+      <stop offset="50%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#10b981"/>
+    </linearGradient>
+    <filter id="blur">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="100" fill="url(#bg)"/>
+  <rect x="20" y="20" width="472" height="472" rx="88" fill="none" stroke="url(#glow)" stroke-width="2" opacity="0.4"/>
+  <!-- Brain circuit paths -->
+  <circle cx="256" cy="256" r="90" fill="none" stroke="url(#glow)" stroke-width="3" opacity="0.3"/>
+  <circle cx="256" cy="256" r="60" fill="none" stroke="#a855f7" stroke-width="1.5" opacity="0.5"/>
+  <!-- Neural nodes -->
+  <circle cx="256" cy="166" r="8" fill="#a855f7" opacity="0.9"/>
+  <circle cx="346" cy="256" r="8" fill="#06b6d4" opacity="0.9"/>
+  <circle cx="256" cy="346" r="8" fill="#10b981" opacity="0.9"/>
+  <circle cx="166" cy="256" r="8" fill="#a855f7" opacity="0.9"/>
+  <circle cx="320" cy="192" r="6" fill="#06b6d4" opacity="0.7"/>
+  <circle cx="320" cy="320" r="6" fill="#10b981" opacity="0.7"/>
+  <circle cx="192" cy="320" r="6" fill="#a855f7" opacity="0.7"/>
+  <circle cx="192" cy="192" r="6" fill="#06b6d4" opacity="0.7"/>
+  <!-- Neural connections -->
+  <line x1="256" y1="166" x2="320" y2="192" stroke="#a855f7" stroke-width="1.5" opacity="0.6"/>
+  <line x1="320" y1="192" x2="346" y2="256" stroke="#06b6d4" stroke-width="1.5" opacity="0.6"/>
+  <line x1="346" y1="256" x2="320" y2="320" stroke="#06b6d4" stroke-width="1.5" opacity="0.6"/>
+  <line x1="320" y1="320" x2="256" y2="346" stroke="#10b981" stroke-width="1.5" opacity="0.6"/>
+  <line x1="256" y1="346" x2="192" y2="320" stroke="#10b981" stroke-width="1.5" opacity="0.6"/>
+  <line x1="192" y1="320" x2="166" y2="256" stroke="#a855f7" stroke-width="1.5" opacity="0.6"/>
+  <line x1="166" y1="256" x2="192" y2="192" stroke="#a855f7" stroke-width="1.5" opacity="0.6"/>
+  <line x1="192" y1="192" x2="256" y2="166" stroke="#06b6d4" stroke-width="1.5" opacity="0.6"/>
+  <!-- Center G -->
+  <text x="256" y="280" text-anchor="middle" font-family="'Segoe UI',system-ui,sans-serif" font-size="88" font-weight="900" fill="url(#glow)" opacity="0.95">G</text>
+  <!-- Outer ring dots -->
+  <circle cx="256" cy="96" r="5" fill="#a855f7" opacity="0.6"/>
+  <circle cx="416" cy="256" r="5" fill="#06b6d4" opacity="0.6"/>
+  <circle cx="256" cy="416" r="5" fill="#10b981" opacity="0.6"/>
+  <circle cx="96" cy="256" r="5" fill="#a855f7" opacity="0.6"/>
+  <!-- Outer connections to inner -->
+  <line x1="256" y1="96" x2="256" y2="166" stroke="url(#glow)" stroke-width="1" opacity="0.3"/>
+  <line x1="416" y1="256" x2="346" y2="256" stroke="url(#glow)" stroke-width="1" opacity="0.3"/>
+  <line x1="256" y1="416" x2="256" y2="346" stroke="url(#glow)" stroke-width="1" opacity="0.3"/>
+  <line x1="96" y1="256" x2="166" y2="256" stroke="url(#glow)" stroke-width="1" opacity="0.3"/>
+  <!-- Status dot -->
+  <circle cx="380" cy="132" r="18" fill="#10b981"/>
+  <circle cx="380" cy="132" r="12" fill="#065f46"/>
+  <circle cx="380" cy="132" r="6" fill="#10b981"/>
+</svg>

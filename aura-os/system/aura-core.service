@@ -1,0 +1,17 @@
+[Unit]
+Description=Aura OS Core Backend Service
+After=network.target
+
+[Service]
+Type=simple
+User=aura
+WorkingDirectory=/opt/aura/backend
+ExecStart=/opt/aura/venv/bin/python core_server.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+Environment="PYTHONUNBUFFERED=1"
+
+[Install]
+WantedBy=multi-user.target

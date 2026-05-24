@@ -1,0 +1,56 @@
+{
+  "entities": {
+    "NeuralMemory": {
+      "title": "Neural Memory",
+      "description": "George's persistent memory and data dumps linked to projects or archives",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "insight": { "type": "string" },
+        "fileCount": { "type": "number" },
+        "dumpType": { "type": "string", "enum": ["archive", "project", "family"] },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "ownerId": { "type": "string" }
+      },
+      "required": ["name", "insight", "timestamp"]
+    },
+    "FamilyRecord": {
+      "title": "Family Record",
+      "description": "High-integrity family data dump for persistent recall",
+      "type": "object",
+      "properties": {
+        "memberName": { "type": "string" },
+        "relation": { "type": "string" },
+        "memoryNotes": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["memberName"]
+    },
+    "GlobalChat": {
+      "title": "Global Chat Message",
+      "description": "Persistent messages from the global George brain",
+      "type": "object",
+      "properties": {
+        "role": { "type": "string", "enum": ["user", "george"] },
+        "text": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "userId": { "type": "string" }
+      },
+      "required": ["role", "text", "timestamp"]
+    }
+  },
+  "firestore": {
+    "neural_memory/{id}": {
+      "schema": "NeuralMemory",
+      "description": "Neural dumps known to George"
+    },
+    "family_data/{id}": {
+      "schema": "FamilyRecord",
+      "description": "Persistent family knowledge base"
+    },
+    "global_chat/{id}": {
+      "schema": "GlobalChat",
+      "description": "Persistent global chat history"
+    }
+  }
+}

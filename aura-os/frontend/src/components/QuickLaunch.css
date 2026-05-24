@@ -1,0 +1,108 @@
+.quick-launch {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.quick-launch-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.quick-launch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  max-width: 600px;
+}
+
+.quick-launch-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  background: rgba(0, 212, 255, 0.03);
+  border: 2px solid rgba(0, 212, 255, 0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #e0e0e0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.quick-launch-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--accent-color, #00d4ff), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.quick-launch-item:hover {
+  border-color: var(--accent-color, #00d4ff);
+  background: rgba(0, 212, 255, 0.08);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 212, 255, 0.15);
+}
+
+.quick-launch-item:active {
+  transform: translateY(-2px);
+}
+
+.app-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 212, 255, 0.1);
+  border-radius: 8px;
+  color: var(--accent-color, #00d4ff);
+  transition: all 0.3s ease;
+}
+
+.quick-launch-item:hover .app-icon {
+  background: rgba(0, 212, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+.app-label {
+  text-transform: uppercase;
+  color: inherit;
+}
+
+@media (max-width: 900px) {
+  .quick-launch-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  .quick-launch-item {
+    padding: 15px;
+  }
+
+  .app-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .quick-launch-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
